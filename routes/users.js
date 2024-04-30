@@ -40,6 +40,8 @@ router.delete("/:id", async (req, res) => {
       return res.status(403).json("You can delete only your account!");
     }
   });
+
+  
 //get friends
 router.get("/friends/:userId", async (req, res) => {
     try {

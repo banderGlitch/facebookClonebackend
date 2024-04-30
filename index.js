@@ -21,8 +21,6 @@ dotenv.config();
 
 //middleware
 
-
-
 try {
     mongoose.connect(
         process.env.MONGODB_URL,
@@ -44,6 +42,14 @@ app.use("/api/post", postRoute)
 
 
 app.listen(PORT, () => {
-    console.log('Server is running on port 3000');
+    console.log(`Server is running on port ${PORT}`);
   });
+
+
+// get api we have
+app.get("/",(req, res) => {
+  res.status(200).json({
+    message : "message sent successfully!"
+  })
+})
 
